@@ -1,35 +1,15 @@
 var express = require("express"),
  	app = express(),
 	bodyParser = require("body-parser"),
-	mongoose = require("mongoose")
+	mongoose = require("mongoose"),
+	Campground = require("./models/campground"),
+	seedDB = require("./seeds")
 
 mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
-//schema
-var campgroundSchema = new mongoose.Schema({
-	name: String,
-	image: String,
-	description: String
-});
-
-var Campground = mongoose.model("Campground", campgroundSchema);
-
-// Campground.create(
-// 	{
-// 		name: "Granite", 
-// 		image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfil1b3s6rnlswTsqnt57_wwtIucynKGP-cZlydRowGzX_IcPLfA",
-// 		description: "Beautiful and spacious granite."
-// 	},function(err, campground){
-// 		if(err){
-// 			console.log(err);
-// 		}else{
-// 			console.log("newly created campground:");
-// 			console.log(campground);
-// 		}
-// 	});
-
+seedDB() //run function seedDB from seeds.js
 
 app.get("/", function(req,res){
 	res.render("landing");
@@ -72,10 +52,12 @@ app.get("/campgrounds/new", function(req,res){
 //SHOW route: show info about a specific dog
 app.get("/campgrounds/:id", function(req,res){
 	//find the campground with provided id
-	Campground.findById(req.params.id, function(err, foundCampground){
+	//.populate will show the actual comment instead of its id
+	Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
 		if(err){
 			console.log(err);
 		}else{
+			console.log(foundCampground);
 			//render show template with that campground
 			res.render("show", {campground: foundCampground});
 		}
