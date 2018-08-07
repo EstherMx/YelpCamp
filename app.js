@@ -14,6 +14,8 @@ seedDB() //run function seedDB from seeds.js
 
 app.get("/", function(req,res){
 	res.render("landing");
+app.use(express.static(__dirname + "/public")) // this connects this app to the styling sheet.
+											  // __direname correspond to current path leading to the public folder
 });
 
 //INDEX route: show all campgrounds
