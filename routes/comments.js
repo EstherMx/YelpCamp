@@ -4,7 +4,7 @@ var express = require("express"),
     Comment = require("../models/comment");
 
 
-//CREATE ROUTE
+//Comments New
 router.get("/campgrounds/:id/comments/new", isLoggedIn, function(req, res){
     // find campground by id
     Campground.findById(req.params.id, function(err, campground){
@@ -16,7 +16,7 @@ router.get("/campgrounds/:id/comments/new", isLoggedIn, function(req, res){
     })
 });
 
-// SHOW ROUTE
+//Comments Create
 router.post("/campgrounds/:id/comments",isLoggedIn, function(req, res){
    //lookup campground using ID
    Campground.findById(req.params.id, function(err, campground){
@@ -29,11 +29,16 @@ router.post("/campgrounds/:id/comments",isLoggedIn, function(req, res){
            if(err){
                console.log(err);
            } else {
-               //connect new comment to campground
-               campground.comments.push(comment);
-               campground.save();
-               //redirect campground show page
-               res.redirect('/campgrounds/' + campground._id);
+              //add username and id to comment
+              comment.author.id = req.user._id;
+              comment.author.username = req.user.username;
+              //save comment
+              comment.save();
+              //connect new comment to campground
+              campground.comments.push(comment);
+              campground.save();
+              //redirect campground show page
+              res.redirect('/campgrounds/' + campground._id);
            }
         });
        }
