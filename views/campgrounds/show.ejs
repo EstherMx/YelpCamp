@@ -15,9 +15,17 @@
 				<div class="caption-full">
 					<h4 class="pull-right">$9.00/night</h4>
 					<h4><a><%= campground.name%></a></h4>
-					<p><p><%= campground.description%></p></p>
+					<p><%= campground.description%></p>
 					<p><em>Submitted By <%= campground.author.username%></em></p>
-					<a class="btn btn-warning" href="/campgrounds/<%= campground._id%>/edit">Edit</a>
+
+					<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+					<!-- currentUser is defined in app.js -->
+						<a class="btn btn-xs btn-warning" href="/campgrounds/<%= campground._id%>/edit">Edit</a>
+						<!-- Use a form to create a POST request with _method -->
+						<form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+							<button class="btn btn-xs btn-danger">Delete</button>
+						</form>
+					<% } %>
 				</div>
 			</div>
 			<div class="well">
@@ -40,8 +48,5 @@
 		</div>
 	</div>
 </div>
-
-
-
 	
 <%include ../partials/footer%>
