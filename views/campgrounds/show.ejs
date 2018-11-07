@@ -19,7 +19,7 @@
                     <p><em>Submitted By <%= campground.author.username%></em></p>
 
                     <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
-                    <!-- currentUser is defined in app.js -->
+                    <!-- currentUser is defined in app.js, app.use  -->
                         <a class="btn btn-xs btn-warning" href="/campgrounds/<%= campground._id%>/edit">Edit</a>
                         <!-- Use a form to create a POST request with _method -->
                         <form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
@@ -41,12 +41,14 @@
                             <p>
                                 <%= comment.text%>
                             </p>
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
                             <a class="btn btn-xs btn-warning" 
                                 href="/campgrounds/<%= campground._id%>/comments/<%= comment._id%>/edit">
                             Edit</a> 
                             <form class="delete-form" action="/campgrounds/<%= campground._id%>/comments/<%= comment._id%>?_method=DELETE" method="POST">
                                 <input type="submit" class="btn btn-xs btn-danger" value="Delete" name="Delete">
                             </form>
+                            <% }%>
                         </div>
                     </div>
                 <% })%>
