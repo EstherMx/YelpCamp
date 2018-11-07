@@ -5,6 +5,7 @@ var express = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
+    flash = require("connect-flash"),
     Campground = require("./models/campground"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
@@ -15,16 +16,17 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
     
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://localhost/yelp_camp_v6");
 //app.use affects every file of the app
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public")); // this connects this app to the styling sheet
 app.use(methodOverride("_method"));
+app.use(flash());
 // seedDB(); //run function seedDB from seed.js
 
 // PASSPORT PRE-CONFIGURATION
-app.use(require("express-session")({
+app.use(require("express-session")({ //express middleware use for persisting sessions accross HYYP requests.
     secret: "Once again Rusty wins cutest dog!",
     resave: false,
     saveUninitialized: false
