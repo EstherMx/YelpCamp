@@ -35,7 +35,8 @@ router.post("/register", function(req, res){
 
 // show login form
 router.get("/login", function(req, res){
-   res.render("login"); 
+    //adding to login page, connect-flash with key "error", which is defined in isLoggedIn middleware
+   res.render("login", {message: req.flash("error")}); 
 });
 // handling login logic
 // router.post("/login", middleware, passport, callback)
