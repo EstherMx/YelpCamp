@@ -1,12 +1,15 @@
 //all the middleware
 var middlewareObj = {},
-	Campground = require("../models/campground"),
-	Comment = require("../models/comment");
+    Campground = require("../models/campground"),
+    Comment = require("../models/comment");
 
 middlewareObj.isLoggedIn = function(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
+    //using the connect-flash dependency
+    //under key "error", we add the value "Please..." which will show up in the header
+    req.flash("error", "Please, Login First!");
     res.redirect("/login");
 }
 
