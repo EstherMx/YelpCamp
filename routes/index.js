@@ -1,4 +1,4 @@
-var express = require("express"),
+]var express = require("express"),
     router = express.Router(),
     passport = require("passport"),
     User = require("../models/user"),
@@ -52,14 +52,5 @@ router.get("/logout", function(req, res){
    req.logout();
    res.redirect("/campgrounds");
 });
-
-//middleware login
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    res.redirect("/login");
-}
-
 
 module.exports = router;
