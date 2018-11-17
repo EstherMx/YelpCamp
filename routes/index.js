@@ -1,9 +1,7 @@
 var express = require("express"),
     router = express.Router(),
     passport = require("passport"),
-    User = require("../models/user"),
-    Campground = require("../models/campground"),
-    Comment = require("../models/comment");
+    User = require("../models/user");
 
 
 //Root Route
@@ -22,26 +20,28 @@ router.post("/register", function(req, res){
     //create a new User:
     User.register(newUser, req.body.password, function(err, user){
         if(err){
+            req.flash("error", err.message);
           //if the user already exists then return the form
             console.log(err);
-            return res.render("register");
+            return res.redirect("/register");
         }
         //else, go to campground page
         passport.authenticate("local")(req, res, function(){
-           res.redirect("/campgrounds"); 
+            req.flash("success", "Welcome to Yelcamp " + user.username);
+            res.redirect("/campgrounds"); 
         });
     });
 });
 
 // show login form
 router.get("/login", function(req, res){
-    //adding to login page, connect-flash with key "error", which is defined in isLoggedIn middleware
-   res.render("login", {message: req.flash("error")}); 
+    res.render("login");   
 });
+
 // handling login logic
 // router.post("/login", middleware, passport, callback)
 // the middleware call the method localStrategy authenticate defined on lign 28
-router.post("/login", passport.authenticate("local", 
+router.post("/login", passport.authenticate("local",
     {
         successRedirect: "/campgrounds",
         failureRedirect: "/login"
@@ -51,6 +51,7 @@ router.post("/login", passport.authenticate("local",
 // handling log out route
 router.get("/logout", function(req, res){
    req.logout();
+   req.flash("success", "You are successfully logged out!")
    res.redirect("/campgrounds");
 });
 
