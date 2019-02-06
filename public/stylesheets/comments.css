@@ -16,6 +16,8 @@ h1{
 .commentBox{
 	width: 70%;
 	margin: auto;
+	display: flex;
+	flex-direction: column;
 }
 ul{
 	display: flex;
@@ -26,20 +28,26 @@ a{
 	text-decoration: none;
 	color: #DFE0DF;
 }
-.submit{
-	margin-left: auto;
-	cursor: pointer;
-	margin-right: 12px;
-	margin-bottom: 12px;
-}
 input{
 	color: #00866F;
 }
-textarea.comment{
+textarea{
 	height: 50px;
 	width: 100%;
 }
 .overlay:target {
   visibility: visible;
   opacity: 1;
+}
+
+.submit{
+	margin-left: auto;
+	cursor: pointer;
+	margin-bottom: 12px;
+}
+.submitBtn{
+	margin-left: auto;
+	cursor: pointer;
+	margin-right: 12px;
+	margin-bottom: 12px;
 }
