@@ -1,32 +1,24 @@
-<% include ../partials/header %>
+<link rel="stylesheet" href="/stylesheets/campgrounds.css">
 <div class="container">
-    <div class="row">
-         <div style="width: 30%; margin: 25px auto;">
-            <h1>Edit Camp</h1>
-            <!-- the action ?_method=PUT represent the edit request -->
-            <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
-                <div class="form-group">
-                    <!-- the name of the input is saved in the obj campground then used in the campground edit route -->
-                    <input class="form-control" type="text" name="campground[name]" value="<%= campground.name%>">
-                </div>
-                 <div class="form-group">
-                    <input class="form-control" type="number" name="campground[price]" value="<%= campground.price%>" min="0.01" step="0.01">
-                </div>
-                <div class="form-group">
-                    <!-- the name of the input is saved in the obj campground then used in the campground edit route -->
-                    <input class="form-control" type="text" name="campground[image]" value="<%= campground.image%>">
-                </div>
-                <div class="form-group">
-                    <!-- the name of the input is saved in the obj campground then used in the campground edit route -->
-                    <input class="form-control" type="text" name="campground[description]" value="<%= campground.description%>">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
-                </div>
-            </form>
+    <h1>Edit Campground</h1>
+    <!-- the action ?_method=PUT represent the edit request -->
+    <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+        <div class="editCamp">
+            <label for="name">Name</label>
+             <!-- the name of the input is saved in the obj campground then used in the campground edit route -->
+            <input id="name" type="text" name="campground[name]" value="<%= campground.name%>">
+                    
+            <label for="price">Price</label>
+            <input id="price" type="number" name="campground[price]" value="<%= campground.price%>" min="0.01" step="0.01">
+                
+            <label for="image">Image url</label>
+            <input id="image" type="text" name="campground[image]" value="<%= campground.image%>">
+               
+            <label for="description">Description</label>
+            <textarea id="description" type="text" name="campground[description]" value="<%= campground.description%>"><%= campground.description%></textarea>
+               
+            <input class="submitBtn" type="submit" value="Submit">
             <a href="/campgrounds">Go Back</a>
         </div>
-    </div>
+    </form>
 </div>
-<% include ../partials/footer %>
-

@@ -1,0 +1,45 @@
+body{
+	background: #DFE0DF;
+	color: #DFE0DF;
+}
+.container{
+	background: #00866F;
+	width: 60%;
+	margin:auto;
+	margin-top: 7%;
+}
+h1{
+	text-align: center;
+	padding-top: 45px;
+}
+.newCamp, .editCamp{
+	display: flex;
+	flex-direction: column;
+	width: 56%;
+	margin: auto;
+}
+label{
+	padding-bottom: 6px;
+}
+input{
+	margin-bottom: 12px;
+	height: 23px;
+}
+
+textarea{
+	height: 50px;
+}
+.submitBtn{
+	margin-top: 45px !important;
+	width: 50%;
+	margin: auto;
+	margin-bottom: 45px;
+	cursor: pointer;
+	color: #00866F;
+}
+a{
+	margin-left: auto;
+	padding-bottom: 3%;
+	color: #DFE0DF;
+	text-decoration: none;
+}
