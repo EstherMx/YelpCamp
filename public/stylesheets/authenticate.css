@@ -3,7 +3,7 @@ body{
 	color: #DFE0DF;
 }
 .container{
-	background: #4C8077;
+	background: #00866F;
 	width: 80%;
 	margin:auto;
 	margin-top: 7%;
@@ -31,5 +31,5 @@ input.loginBtn, .signupBtn{
 	margin: auto;
 	margin-bottom: 45px;
 	cursor: pointer;
-	color: #4C8077;
+	color: #00866F;
 }

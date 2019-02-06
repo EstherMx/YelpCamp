@@ -1,0 +1,45 @@
+body{
+	background: #DFE0DF;
+	color: #DFE0DF;
+}
+.container{
+	background: #00866F;
+	width: 60%;
+	margin:auto;
+	margin-top: 14%;
+}
+h1{
+	text-align: center;
+	padding-top: 12px;
+	margin-bottom: 8px;
+}
+.commentBox{
+	width: 70%;
+	margin: auto;
+}
+ul{
+	display: flex;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #DFE0DF;
+}
+.submit{
+	margin-left: auto;
+	cursor: pointer;
+	margin-right: 12px;
+	margin-bottom: 12px;
+}
+input{
+	color: #00866F;
+}
+textarea.comment{
+	height: 50px;
+	width: 100%;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
