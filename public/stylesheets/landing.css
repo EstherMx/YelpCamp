@@ -1,16 +1,33 @@
-body{
-	background-color: #000;
-}
-
-#landing-header {
+.landingPage{
   z-index: 1;
   position: relative;
   text-align: center;
-  padding-top: 40vh;
+  padding-top: 30vh;
 }
 
-#landing-header h1{
-	color: #fff;
+h1{
+  color: #CE5C0D;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
+}
+ul{
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 13%;
+}
+li{
+  margin-right: 22px;
+  margin-left: 22px;
+}
+
+a{
+  text-decoration: none;
+  border: 2px solid #CE5C0D;
+  padding: 9px 18px 11px 18px;
+  border-radius: 7px;
+  background: #CE5C0D;
+  color:white;
 }
 
 .slideshow { 
@@ -20,7 +37,6 @@ body{
   top: 0;
   left: 0;
   z-index: 0;
-  /*remove the dots from li tags*/
   list-style: none; 
   margin: 0;
   padding: 0;
@@ -32,33 +48,37 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-  /*images take the whole page*/
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 30s linear infinite; 
+  animation: imageAnimation 50s linear infinite; 
 }
 
-.slideshow li:nth-child(1) { 
-  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+.slideshow li:nth-child(1) {
+  background-image: url(http://i.imgur.com/emvhOnb.jpg); 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
-  animation-delay: 6s; 
+  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
-  animation-delay: 12s; 
+  background-image: url(http://i.imgur.com/K3mPv14.jpg);
+  animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
-  animation-delay: 18s; 
+  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
-  animation-delay: 24s; 
+  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  animation-delay: 40s; 
+}
+
+body{
+ 
+ background: black;
 }
 
 @keyframes imageAnimation { 
@@ -80,5 +100,5 @@ body{
 
 /* Older browser support - .no-cssanimations class added by modernizr */
 .no-cssanimations .slideshow li {
-	opacity: 1;
-}
+  opacity: 1;
+}*/
