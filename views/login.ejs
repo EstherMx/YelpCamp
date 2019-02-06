@@ -1,13 +1,21 @@
-<% include ./partials/header %> 
-
+<link rel="stylesheet" href="/stylesheets/authenticate.css">
 <div class="container">
 	<h1>Login!</h1>
 	<form action="/login" method="POST">
-	    <input type="text" name="username" placeholder="username">
-	    <input type="password" name="password" placeholder="password">
-	    <input type="submit" value="Login!">
+		<div class="loginInput">
+			<label for="username">Username</label>
+		    <input type="text" id="username" name="username">
+
+		    <label for="password">Password</label>
+		    <input type="password" id="password" name="password">
+
+		    <input class="loginBtn" type="submit" value="Login">
+		</div>
 	</form>
 </div>
+
 	
 
-<% include ./partials/footer %> 
+
+
+
