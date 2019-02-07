@@ -2,18 +2,17 @@
 <html>
     <head>
         <title>YelpCamp</title>
-        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="/stylesheets/index.css">
     </head>
-    
-    <body>
-    <ul class="navbar" role="navigation">
-        <li class="yelpLogo"> <a href="/campgrounds">YelpCamp</a></li>
-        <li class="aboutUs"><a href="#about">About</a></li>
+
+    <body>    
+    <ul class="navbar"  role="navigation">
+        <li class="yelpLogo"> <a class="navBtn" href="/campgrounds">YelpCamp</a></li>
+        <li><a class="navBtn" href="#about">About</a></li>
         <% if(!currentUser){ %>
-            <li class="login"><a  href="/login">Login</a></li>
+            <li><a class="navBtn"  href="/login">Login</a></li>
         <% } else { %>
-            <li class="signinAs"><a href="#">Signed In As <%= currentUser.username %></a></li>
-            <li class="logout"><a class="logout" class="logout" href="/logout">Logout</a></li>
+            <li><a class="navBtn" href="/logout">Logout</a></li>
         <% } %>
     </ul>
 
@@ -29,4 +28,5 @@
             </div>
         <% } %>
     </div>
+
     
