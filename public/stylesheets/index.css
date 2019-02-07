@@ -1,0 +1,89 @@
+body{
+	background: #E29E21;
+	color: white;
+	width: 100%;
+	margin: 0px;
+}
+ul{
+	display: flex;
+	list-style: none;
+	padding-inline-start: 0px;
+}
+a{
+	cursor: pointer;
+  	text-decoration: none;
+  	color: white;
+  	text-align: center;
+  	border-radius: 7px;
+}
+p{
+	margin-bottom: 40px;
+}
+img{
+    width: 100%;
+    height: 192px;
+}
+li{ 
+	text-align: center;
+}
+
+/*Navbar: Header Partials*/
+.yelpLogo{
+	margin-right: auto;
+}
+a.navBtn{
+	cursor: pointer;
+	border: 1.5px solid #F5AE34;
+	padding: 5px 9px 5px 9px;
+	margin: 20px;
+	border-radius: 7px !important;
+	background:  #E29E21;
+	color: white;
+}
+/* End of Navbar*/
+
+
+.yelpcampContainer{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+}
+header {
+    grid-column: 1/-1;
+    height: 220px;
+    background: #E29E21;
+    text-align: center;
+    color: white;
+}
+main {
+    grid-column: 1/-1;
+    background: #f9fcfbfa;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+   
+}
+a.addCamp{
+	background: #F5AE34;
+	border: 1px solid #F5AE34;
+  	padding: 9px;
+}
+ul.campground{
+	grid-template-columns: 4fr;
+	display: flex;
+	flex-direction: column;
+	border: 2px solid #4C8077;
+	background: #304d68;
+	margin: 12px;
+	height: 445px;
+}
+.campDesc{
+	height: 120px;
+	margin-bottom: 20px;
+}
+a.learnMore{
+	border: 1px solid #F5AE34;
+  	padding: 7px 9px 7px 9px;
+  	background: #E29E21;
+}
+
