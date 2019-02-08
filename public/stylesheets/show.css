@@ -1,0 +1,90 @@
+body{
+	background: #E29E21;
+	color: #00624D;
+	width: 100%;
+}
+img{
+	width:100%;
+	height: 100%;
+}
+button, input{
+	color: #86afa6;
+}
+.container{
+	background: #f9fcfbfa;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 10px;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: auto;
+}
+.campImg{
+	grid-column: 2/8;
+	grid-row: 2/-1;
+} 
+.campInfo{
+	grid-column: 8/12;
+	grid-row: 2/-1;
+	background: white;
+	padding: 0 15% 0 15%;
+	align-items: center;
+}
+.addComment{
+	grid-column: 5/9;
+	grid-row: 10/11;
+	border-radius: 5px;
+	padding: 5px;
+	background: #86afa6;
+	text-align: center;
+	margin: 43px 0 20px 0;
+}
+.comments{
+	grid-column: 2/12;
+	grid-row: 11/auto;
+	background: white;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: #009C9B;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: auto;
+}
+.commentsInfo{
+	grid-column: 4/10;
+	grid-row: auto;
+	display: flex;
+	flex-direction: column;
+	border: 1.5px solid beige;
+	border-radius: 5px;
+	padding: 0 6%;
+	margin-bottom: 2%;
+}
+ul.info{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.info p{
+	text-align: center;
+}
+ul.post{
+	margin-block-end: 0px;
+}
+li.submittedBy{
+	margin-left: auto;
+}
+ul.edit{
+	display: flex;
+}
+.edit li{
+	margin-left: auto;
+}
+.edit li a{
+	color: #86afa6;
+	text-align: center;
+	margin: 8px;
+}
+.borderText{
+	border: 1.5px solid #f9fcfbfa;
+}
