@@ -11,7 +11,7 @@
     <% campgrounds.forEach(function(campground){ %>
       <ul class="campground">
         <li><img src="<%= campground.image %>"></li>
-        <li class="campName"><h3><%= campground.name %></h3></li>
+        <li><h3><%= campground.name %></h3></li>
         <li class="campDesc"><p><%= campground.description%></p></li>
         <li><a class="learnMore" href="/campgrounds/<%= campground._id %>">Learn More</a></li>
       </ul> 

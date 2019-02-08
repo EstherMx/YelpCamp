@@ -3,7 +3,7 @@
     <h1>Add a New Comment</h1>
     <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
         <div class="commentBox">
-            <textarea id="description" type="text" name="description" placeholder="Type here..."></textarea> 
+            <textarea id="text" type="text" name="comment[text]" placeholder="Type here..."></textarea> 
             <ul>
                 <li class="submitBtn"><input type="submit" value="Submit"></li>
                 <li><a href="/campgrounds/<%= campground._id%>">Cancel</a></li>

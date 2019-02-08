@@ -7,15 +7,16 @@
 
     <body>    
     <ul class="navbar"  role="navigation">
-        <li class="yelpLogo"> <a class="navBtn" href="/campgrounds">YelpCamp</a></li>
-        <li><a class="navBtn" href="#about">About</a></li>
+        <li class="yelpLogo"> <a href="/campgrounds">YelpCamp</a></li>
+        <li><a href="/about">About</a></li>
         <% if(!currentUser){ %>
-            <li><a class="navBtn"  href="/login">Login</a></li>
+            <li><a  href="/login">Login</a></li>
         <% } else { %>
-            <li><a class="navBtn" href="/logout">Logout</a></li>
+            <li><a href="/logout">Logout</a></li>
         <% } %>
     </ul>
 
+    <!-- Passport logic -->
     <div class="container">
         <% if(error && error.length > 0){ %>
             <div class="alert alert-danger" role="alert">
@@ -28,5 +29,3 @@
             </div>
         <% } %>
     </div>
-
-    
