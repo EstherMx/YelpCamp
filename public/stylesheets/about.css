@@ -1,0 +1,42 @@
+.container{
+	background: #304d68;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 10px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 1/3;
+}
+.founded{
+	grid-column: 5/9;
+	grid-row: 1/auto;
+	background: #4C8077;;
+}
+.yelpImg{
+	grid-column: 6/12;
+	grid-row: 2/3;
+} 
+img{
+	height: 100%;
+	width: 100%;
+}
+.meetEs{
+	grid-column: 2/6;
+	grid-row: 2/3;
+	background: white;
+	padding: 0 15% 0 15%;
+	color: #009C9B;
+}
+.esImg{
+	grid-column: 2/6;
+	grid-row: 3/4;
+	background: #86afa6;
+}
+.esGoal{
+	grid-column: 6/12;
+	grid-row: 3/4;
+	background: white;
+	color: #009C9B;
+	padding: 0 15% 0 15%;
+}
