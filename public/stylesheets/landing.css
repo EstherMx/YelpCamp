@@ -1,3 +1,6 @@
+body{
+ background: black;
+}
 .landingPage{
   z-index: 1;
   position: relative;
@@ -7,7 +10,7 @@
 
 h1{
   color: #CE5C0D;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; 
 }
 ul{
   padding: 0;
@@ -22,12 +25,12 @@ li{
 }
 
 a{
-  text-decoration: none !important;
+  text-decoration: none ;
   border: 2px solid #CE5C0D;
   padding: 9px 18px 11px 18px;
   border-radius: 7px;
   background: #CE5C0D;
-  color: white !important;
+  color:white ;
 }
 
 .slideshow { 
@@ -76,10 +79,7 @@ a{
   animation-delay: 40s; 
 }
 
-body{
- 
- background: black;
-}
+
 
 @keyframes imageAnimation { 
   0% { 
