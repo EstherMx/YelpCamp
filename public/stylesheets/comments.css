@@ -39,7 +39,6 @@ textarea{
   visibility: visible;
   opacity: 1;
 }
-
 .submit{
 	margin-left: auto;
 	cursor: pointer;
@@ -50,4 +49,25 @@ textarea{
 	cursor: pointer;
 	margin-right: 12px;
 	margin-bottom: 12px;
+}
+
+
+@media screen and (min-width: 1170px){
+	.container{
+		width: 53%
+	}
+	textarea{
+		height: 84px
+	}
+}
+@media screen and (max-width: 800px){
+	.container{
+		width: 75%;
+		margin-top: 9%;
+	}
+}
+@media screen and (max-width: 512px){
+	.container{
+		width: 88%;
+	}
 }

@@ -1,3 +1,4 @@
+/*new & edit campgrounds*/
 body{
 	background: #DFE0DF;
 	color: #DFE0DF;
@@ -25,7 +26,6 @@ input{
 	margin-bottom: 12px;
 	height: 23px;
 }
-
 textarea{
 	height: 50px;
 }
@@ -42,4 +42,21 @@ a{
 	padding-bottom: 3%;
 	color: #DFE0DF;
 	text-decoration: none;
+}
+
+
+@media screen and (min-width: 1170px){
+	.container{
+		width: 45%
+	}
+}
+@media screen and (max-width: 800px){
+	.container{
+		width: 75%;
+	}
+}
+@media screen and (max-width: 512px){
+	.container{
+		width: 88%;
+	}
 }
