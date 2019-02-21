@@ -6,7 +6,7 @@ var express = require("express"),
 
 
 //NEW ROUTE
-router.get("/campgrounds/:id/comments/new", middleware.isLoggedIn, function(req, res){
+router.get("/campgrounds/:id/comments/new", function(req, res){
     // find campground by id
     Campground.findById(req.params.id, function(err, campground){
         if(err){
@@ -18,7 +18,7 @@ router.get("/campgrounds/:id/comments/new", middleware.isLoggedIn, function(req,
 });
 
 //CREATE ROUTE
-router.post("/campgrounds/:id/comments",middleware.isLoggedIn, function(req, res){
+router.post("/campgrounds/:id/comments", function(req, res){
    //lookup campground using ID
    Campground.findById(req.params.id, function(err, campground){
        if(err){
