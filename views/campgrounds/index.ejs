@@ -9,12 +9,12 @@
 
   <main>
     <% campgrounds.forEach(function(campground){ %>
-      <ul class="campground">
-        <li><img src="<%= campground.image %>"></li>
-        <li><h3><%= campground.name %></h3></li>
-        <li class="campDesc"><p><%= campground.description%></p></li>
-        <li><a class="learnMore" href="/campgrounds/<%= campground._id %>">Learn More</a></li>
-      </ul> 
+      <div class="campground">
+        <img src="<%= campground.image %>">
+        <h3><%= campground.name %></h3>
+         <p class="campDesc"><%= campground.description%></p>
+        <a class="learnMore" href="/campgrounds/<%= campground._id %>">Learn More</a>
+      </div> 
     <% }); %>  
   </main>
 </div>

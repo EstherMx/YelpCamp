@@ -12,14 +12,13 @@ a{
 	cursor: pointer;
   	text-decoration: none;
   	color: white;
-  	text-align: center;
+  	/*text-align: center;*/
   	border-radius: 7px;
 }
 img{
     width: 100%;
-    height: 192px;
+    height: 252px;
 }
-
 
 /*Navbar: Header Partials*/
 ul.navbar{
@@ -49,41 +48,43 @@ header {
     grid-column: 1/-1;
     height: 220px;
     background: #E29E21;
-    text-align: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 main {
     grid-column: 1/-1;
     background: #f9fcfbfa;
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-   
+    grid-template-columns: repeat(3, 1fr); 
 }
-.yelpcampContainer p{
+.campground{
+	grid-template-columns: 4fr;
+	background: #304d68;
+	border: 2px solid #4C8077;
+	margin: 12px;
+	height: 445px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+header p{
 	margin-bottom: 40px;
-	text-align: center;
-}
-.yelcampContainer li{ 
-	text-align: center;
 }
 a.addCamp{
 	background: #F5AE34;
 	border: 1px solid #F5AE34;
   	padding: 9px;
 }
-ul.campground{
-	grid-template-columns: 4fr;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border: 2px solid #4C8077;
-	background: #304d68;
-	margin: 12px;
-	height: 445px;
+.campground p{
+	margin-block-end: 0;
+	margin-block-start: 0;
+	padding: 0 15px 0 15px;
 }
 .campDesc{
-	height: 120px;
+	height: 104px;
 	margin-bottom: 20px;
 }
 a.learnMore{
@@ -92,3 +93,52 @@ a.learnMore{
   	background: #E29E21;
 }
 
+
+@media screen and (min-width: 1170px){
+	main{
+		grid-template-columns: repeat(4, 1fr);
+		padding: 45px;
+	}
+	img{
+		height: 210px;
+	}
+	.campground{
+		grid-template-columns: 3fr;
+	}
+}
+@media screen and (max-width: 920px){
+	img{
+		width: 100%;
+		height: 230px;
+	}
+}
+@media screen and (max-width: 800px){
+	main{
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.campground{
+		grid-template-columns: 6fr;
+	}
+	.campDesc{
+	height: 104px;
+	margin-bottom: 20px;
+	}
+}
+@media screen and (max-width: 512px){
+	main{
+		grid-template-columns: repeat(1, 1fr);
+		padding: 30px;
+	}
+	img{
+		height: 227px;
+	}
+	.container{
+		width: 88%;
+	}
+	.campground{
+		grid-template-columns: 12fr;
+	}
+	.campDesc{
+		height: 95px;
+	}
+}
