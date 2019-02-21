@@ -4,7 +4,7 @@ var express = require("express"),
     middleware = require("../middleware/index.js");
 
 //INDEX - show all campgrounds
-router.get("/campgrounds", function(req, res){
+router.get("/campgrounds",middleware.isLoggedIn, function(req, res){
     // Get all campgrounds from DB
     Campground.find({}, function(err, allCampgrounds){
        if(err){
@@ -39,7 +39,7 @@ router.post("/campgrounds", middleware.isLoggedIn, function(req, res){
 });
 
 //NEW ROUTE - show form to create new campground
-router.get("/campgrounds/new", middleware.isLoggedIn, function(req, res){
+router.get("/campgrounds/new", function(req, res){
    res.render("campgrounds/new"); 
 });
 
