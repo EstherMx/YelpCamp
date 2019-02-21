@@ -7,10 +7,10 @@ body{
   text-align: center;
   padding-top: 30vh;
 }
-
 h1{
-  color: #CE5C0D;
+  color: #E29E21;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; 
+  font-size: -webkit-xxx-large;
 }
 ul{
   padding: 0;
@@ -23,7 +23,6 @@ li{
   margin-right: 22px;
   margin-left: 22px;
 }
-
 a{
   text-decoration: none ;
   border: 2px solid #CE5C0D;
@@ -44,7 +43,6 @@ a{
   margin: 0;
   padding: 0;
 }
-
 .slideshow li { 
   width: 100%;
   height: 100%;
@@ -58,7 +56,6 @@ a{
   z-index: 0;
   animation: imageAnimation 50s linear infinite; 
 }
-
 .slideshow li:nth-child(1) {
   background-image: url(http://i.imgur.com/emvhOnb.jpg); 
 }
