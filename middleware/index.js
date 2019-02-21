@@ -9,7 +9,6 @@ middlewareObj.isLoggedIn = function(req, res, next){
     }
     //using the connect-flash dependency
     //under key "error", we add the value "Please..." which will show up in the header
-    req.flash("error", "Please, Login First!");
     res.redirect("/login");
 }
 
